@@ -21,12 +21,20 @@ public class ServletExample extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
+		
+		if(request.getParameter("firstName")==null || request.getParameter("lastName")==null){
+			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			return;
+		}
 		
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
+		request.setAttribute("firstname", firstName);
+		request.setAttribute("lastname",lastName);
+		getServletContext().getRequestDispatcher("/output.jsp").forward(request, response);
 		
-		out.println("Hello " + firstName+" "+lastName);
+		//out.println("Hello " + firstName+" "+lastName);
 	}
 
 }

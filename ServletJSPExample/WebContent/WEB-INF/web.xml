@@ -27,6 +27,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlet</servlet-name>
-    <url-pattern>/dhaka</url-pattern>
+    <url-pattern>/servletexample</url-pattern>
   </servlet-mapping>
 </web-app>

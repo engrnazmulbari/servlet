@@ -8,27 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<form action="servletexample" method="post">
-	<table>
-	<tr>
-		<td>
-			First Name: <input type="text" name="firstName" />
-		</td>
-	</tr>
-	<tr>
-		<td>
-			Last Name: <input type="text" name="lastName" />	
-		</td>
-	</tr>
-	<tr>
-		<td>
-		<input type="submit" value="Submit" />	
-		</td>
-	</tr>
-</table>	
-	</form>
-
-
+<h1>First Name and Last Name</h1>
+<%
+	String firstName = (String)request.getAttribute("firstname");
+	String lastName = (String)request.getAttribute("lastname");
+	out.print(firstName+" "+lastName);
+%>
 </body>
 </html>
